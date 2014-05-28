@@ -1,0 +1,139 @@
+<style>
+
+
+/* First level of nav */
+.sidenav {
+	position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top:    10px;
+  padding-bottom: 10px;
+  background-color: #E1FDE9;
+  border-radius: 5px;
+}
+
+/* All levels of nav */
+.sidebar .nav > li > a {
+  display: block;
+  color: #103318;
+  padding: 5px 20px;
+}
+.sidebar .nav > li > a:hover,
+.sidebar .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #B8EEC8;
+}
+.sidebar .nav > .active > a,
+.sidebar .nav > .active:hover > a,
+.sidebar .nav > .active:focus > a {
+  font-weight: bold;
+  color: #4E8860;
+  background-color: transparent;
+}
+
+/* Nav: second level */
+.sidebar .nav .nav {
+  margin-bottom: 8px;
+}
+.sidebar .nav .nav > li > a {
+  padding-top:    3px;
+  padding-bottom: 3px;
+  padding-left: 30px;
+  font-size: 90%;
+  color:#216635;
+}
+
+.sidebar .nav-title{
+  padding-top:    3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  font-size: 120%;
+  font-weight: bold;
+  color: white;
+  background-color: #4E8860;
+}
+</style>
+<div>
+<nav class="sidebar col-xs-3">
+    <ul class="nav sidenav affix" data-spy="affix" data-offset-top="10">
+        <li class="nav-title">資訊應用課程
+		<li><a>文書處理</a>
+        <ul class="nav">
+        <li><a href="#" id="1091" onclick="showDetail(this.id);">Excel2010初階應用</a></li>
+		<li><a href="#" id="1090" onclick="showDetail(this.id);">Word2010文書處理(職員專班)</a></li>
+        </ul>
+        </li>
+        <li><a>多媒體影像繪圖</a>
+        <ul class="nav">   
+        <li><a href="#" id="1082" onclick="showDetail(this.id);">Illustrator CS3繪圖設計與應用</a></li>
+        <li><a href="#" id="1081" onclick="showDetail(this.id);">Photoshop CS3數位影像處理及應用</a></li>        
+        </ul>
+        </li>
+        <li><a>網頁設計</a>
+        <ul class="nav">   
+        <li><a href="#" id="1087" onclick="showDetail(this.id);">CSS&amp;jQuery網頁特效製作初階</a></li>        
+        <li><a href="#" id="1088" onclick="showDetail(this.id);">CSS&amp;jQuery網頁特效製作進階</a></li>     
+		</ul>
+        </li>
+		<li class="nav-title">資訊進階課程
+        <li><a>程式設計</a>
+        <ul class="nav">   
+		<li><a href="#" id="1084" onclick="showDetail(this.id);">C++程式設計基礎</a></li>
+        <li><a href="#" id="1089" onclick="showDetail(this.id);">PHP&amp;MySQL互動網頁基礎設計</a></li>
+        </ul>
+        </li>
+        <li><a>資料庫管理系列</a>
+        <ul class="nav">   
+        <li><a href="#" id="1086" onclick="showDetail(this.id);">ACCESS資料庫設計(職員專班)</a></li>		
+        </ul>
+        </li>
+        <li><a>統計軟體</a>
+        <ul class="nav">   
+        <li><a href="#" id="1085" onclick="showDetail(this.id);">SPSS Modeler資料探勘實務基礎</a></li>
+        <li><a href="#" id="1083" onclick="showDetail(this.id);">SPSS統計分析實務</a></li>  
+        </ul>
+        </li>
+        <li><a>高效能運算系列</a>
+        <ul class="nav">   
+		</ul>
+        </li>
+    </ul>
+</nav>
+</div>
+<script type="text/javascript">
+function showDetail(course) {
+    $('ul.nav > li > ul >li').click(function (e) {
+        e.preventDefault();
+        $('ul.nav > li > ul >li').removeClass('active');
+        $(this).addClass('active');                
+    });         
+ var courseInfo = getCourseInfo(course);
+ $('#courseDetail').attr('src',courseInfo[0]);
+ $('#courseName').text( courseInfo[1]);
+ document.getElementById('images').innerHTML='';
+ document.getElementById('coursePage').style.display='';
+}
+function getCourseInfo(id){
+	var src;
+	var courseName='課程介紹';
+	/*switch(course){
+		case 'Excel2010-1':
+			src = 'http://localhost/testCourse.html';
+			courseName = "Excel初階應用(職員專班)";
+			break;
+		case 'Excel2010-2':
+			src = 'http://localhost/testCourse2.html';
+			courseName = "Excel進階實務應用";
+			break;
+	
+	}*/
+	src='https://my.ntu.edu.tw/register/ViewCourseForm.asp?CourseID='+id;
+	return [src,courseName];
+}
+
+	
+</script>
+
+
+
+

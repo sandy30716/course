@@ -1,0 +1,42 @@
+    <style>
+      body {
+        padding-top: 90px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.php"><img src="/image/logo7.png"></a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+			<li id='index'><a href="/index.html">|首頁|</a></li>
+			<li id='courseOverView'><a href="/courseOverview.html">|課程總覽|</a></li>				
+			<li id='registration'><a href="/registration.html">|課程報名|</a></li>					
+			<li id='otherInfo'><a href="/otherInfo.html">|其他資訊|</a></li>			
+			<li id='FAQ'><a href="/FAQ.html">|常見問題|</a></li>			
+			<li id='trafficInfo'><a href="/trafficInfo.html">|交通資訊|</a></li>				
+			<li id='contactUs'><a href="/contactUs.html">|聯絡我們|</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+<script>
+currentURL=document.URL;
+if(currentURL.indexOf('index')!=-1)
+	document.getElementById('index').className+=' active';
+else if(currentURL.indexOf('courseOverview')!=-1)
+	document.getElementById('courseOverView').className+=' active';
+else if(currentURL.indexOf('registration')!=-1)
+	document.getElementById('registration').className+=' active';	
+else if(currentURL.indexOf('otherInfo')!=-1)
+	document.getElementById('otherInfo').className+=' active';	
+else if(currentURL.indexOf('FAQ')!=-1)
+	document.getElementById('FAQ').className+=' active';	
+else if(currentURL.indexOf('trafficInfo')!=-1)
+	document.getElementById('trafficInfo').className+=' active';	
+else if(currentURL.indexOf('contactUs')!=-1)
+	document.getElementById('contactUs').className+=' active';	
+	
+	
+</script>

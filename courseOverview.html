@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>台大計中資訊課程網站</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/css/bootstrap.css" rel="stylesheet">
+	<script type="text/javascript" src="./jquery.min.js">
+	</script>  
+	<script>
+    $(function(){
+      $("#header").load("./header.html"); 
+	  $("#NavbarCourse").load("./NavbarCourse.html");
+	  $("#footer").load("./footer.html");
+    });
+	</script>
+  </head>
+
+<body data-spy="scroll" data-target=".navbar-example">
+<div id='header'></div>
+
+<div id="wrap">
+<div class="col-xs-12">
+
+	<div id='NavbarCourse'></div>	
+	<div class="col-xs-7">
+		<div class="page-header">
+		<h1 name="courseName" id="courseName">課程總覽 <small>Course Overview</small></h1>
+		</div>		
+		<div id='images'>
+		<div class="page-header"><h3>資訊應用課程</h2></div>
+			<div class="row">
+			   <div class="col-sm-6 col-md-3">
+				  <a href="#" class="thumbnail">
+					 <img src="./image/01.png" 
+					 alt="Generic placeholder thumbnail">
+				  </a>
+			   </div>
+			   <div class="col-sm-6 col-md-3">
+				  <a href="#" class="thumbnail">
+					 <img src="./image/02.jpg" 
+					 alt="Generic placeholder thumbnail">
+				  </a>
+			   </div>
+			</div>		
+		<div class="page-header"><h3>資訊進階課程</h2></div>		
+			<div class="row">
+			   <div class="col-sm-6 col-md-3">
+				  <a href="#" class="thumbnail">
+					 <img src="./image/03.jpg" 
+					 alt="Generic placeholder thumbnail">
+				  </a>
+			   </div>
+			   <div class="col-sm-6 col-md-3">
+				  <a href="#" class="thumbnail">
+					 <img src="./image/04.jpg" 
+					 alt="Generic placeholder thumbnail">
+				  </a>
+			   </div>
+			   <div class="col-sm-6 col-md-3">
+				  <a href="#" class="thumbnail">
+					 <img src="./image/05.png" 
+					 alt="Generic placeholder thumbnail">
+				  </a>
+			   </div>
+			   <div class="col-sm-6 col-md-3">
+				  <a href="#" class="thumbnail">
+					 <img src="./image/06.png" 
+					 alt="Generic placeholder thumbnail">
+				  </a>
+			   </div>
+			</div>
+			</div>
+			
+		<div id='coursePage'>
+		<iframe name="courseDetail" id="courseDetail" src="" width=100% height=1100px seamless=seamless></iframe>
+		</div>
+				
+	</div>
+</div>	
+</div>
+<div id="footer"></div>
+		
+	
+  </body>
+<Script>
+if(document.getElementById('images').innerHTML!=''){
+	document.getElementById('coursePage').style.display='none';
+}
+</script>
+</html>
+
